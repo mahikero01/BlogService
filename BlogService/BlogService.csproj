@@ -165,6 +165,8 @@
     <Compile Include="Models\BlogServiceContext.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\PostDetailDTO.cs" />
+    <Compile Include="Models\PostDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

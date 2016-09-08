@@ -18,13 +18,30 @@ namespace BlogService.Controllers
         private BlogServiceContext db = new BlogServiceContext();
 
         // GET: api/Posts
+        /*
         public IQueryable<Post> GetPosts()
         {
             return db.Posts
                 .Include(p => p.Person);
         }
+        */
+
+        public IQueryable<PostDTO> GetPosts()
+        {
+            var posts = from p in db.Posts
+                        select new PostDTO() 
+                        { 
+                            Id = p.Id,
+                            Title = p.Title,
+                            AuthorName = p.Person.Name
+                        };
+
+            return posts;
+        }
+
 
         // GET: api/Posts/5
+        /*
         [ResponseType(typeof(Post))]
         public async Task<IHttpActionResult> GetPost(Guid id)
         {
@@ -36,6 +53,28 @@ namespace BlogService.Controllers
 
             return Ok(post);
         }
+        */
+
+        [ResponseType(typeof(PostDetailDTO))]
+        public async Task<IHttpActionResult> GetPost(Guid id)
+        {
+            var post = await db.Posts.Include(p => p.Person).Select(p =>
+                new PostDetailDTO() 
+                { 
+                    Id = p.Id,
+                    Title = p.Title,
+                    Comment = p.Comment,
+                    AuthorName = p.Person.Name
+                }).SingleOrDefaultAsync(p => p.Id == id);
+
+            if (post == null) 
+            {
+                return NotFound();
+            }
+
+            return Ok(post);
+        }
+
 
         // PUT: api/Posts/5
         [ResponseType(typeof(void))]
