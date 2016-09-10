@@ -3,7 +3,10 @@
         <tr ng-repeat="post in posts">
             <td>{{post.Title}}</td>
             <td>
-                <a href="#/postdetails/{{post.Id}}">Details</a>
+                <a class="btn btn-default" href="#/postdetails/{{post.Id}}">Details</a>
+                <button class="btn btn-default" ng-click="delete(post)">
+                    Delete
+                </button>
             </td>
         </tr>
     </table>
