@@ -175,6 +175,7 @@
     <Content Include="Client\Scripts\blogInfo.js" />
     <Content Include="Client\Scripts\PostController.js" />
     <Content Include="Client\Scripts\PostDetailsController.js" />
+    <Content Include="Client\Scripts\PostEditController.js" />
     <Content Include="Client\Scripts\postService.js" />
     <Content Include="Client\Views\postdetails.html" />
     <Content Include="Client\Views\postedit.html" />

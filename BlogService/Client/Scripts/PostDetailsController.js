@@ -7,6 +7,10 @@
             .success(function (data) {
                 $scope.post = data;
             });
+
+        $scope.edit = function () {
+            $scope.edit.post = angular.copy($scope.post);
+        };
     };
 
     app.controller("PostDetailsController", PostDetailsController)

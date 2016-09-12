@@ -17,5 +17,9 @@ namespace BlogService.Models
 
         public Guid PersonId { get; set; }
         public Person Person { get; set; }
+
+        public Post(){
+            Id = Guid.NewGuid();
+        }
     }
 }

@@ -139,6 +139,7 @@ namespace BlogService.Controllers
             }
 
             return CreatedAtRoute("DefaultApi", new { id = post.Id }, post);
+            //return CreatedAtRoute("DefaultApi", post);
         }
 
         // DELETE: api/Posts/5

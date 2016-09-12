@@ -6,6 +6,17 @@
                 $scope.posts = data;
             });
 
+        $scope.create = function () {
+            $scope.edit = {
+                post: {
+                    
+                    Title: "",
+                    Comment: "",
+                    PersonID: "b17977e6-6559-402a-909c-21856748165f"
+                }
+            };
+        };
+
         $scope.delete = function (post) {
             postService.delete(post)
                 .success(function () {
