@@ -107,7 +107,7 @@ namespace BlogService.Controllers
                     throw;
                 }
             }
-
+            //catch (b)
             return StatusCode(HttpStatusCode.NoContent);
         }
 

@@ -1,7 +1,7 @@
 ﻿(function (app) {
     var PostEditController = function ($scope, postService) { 
         $scope.isEditable = function () {
-            return $scope.edit && $scope.edit.post
+            return $scope.edit && $scope.edit.post;
         };
 
         $scope.cancel = function () {

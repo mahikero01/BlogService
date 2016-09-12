@@ -4,9 +4,11 @@
             .getAll()
             .success(function (data) {
                 $scope.posts = data;
+                
             });
 
         $scope.create = function () {
+            //$scope.edita = "ha";
             $scope.edit = {
                 post: {
                     
@@ -15,6 +17,7 @@
                     PersonID: "b17977e6-6559-402a-909c-21856748165f"
                 }
             };
+            //$scope.editaf = 1;
         };
 
         $scope.delete = function (post) {
